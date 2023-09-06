@@ -1,20 +1,42 @@
+
 {
-	"name": "templatemaker-vite",
-	"version": "0.0.1",
+	"name": "pdf-template-makernew",
+	"version": "2.0.0",
+	"private": false,
+	"type": "module",
+	"main": "src/PDFmakerApp.svelte",
+	"module": "src/PDFmakerApp.svelte",
+	"svelte": "src/PDFmakerApp.svelte",
 	"scripts": {
-		"dev": "vite dev",
-		"build": "vite build",
-		"preview": "vite preview",
-		"test": "playwright test"
+	  "generate-file-list": "node generateFileList.js",
+	  "build": "rollup -c",
+	  "dev": "rollup -c -w",
+	  "start": "sirv public --no-clear",
+	  "test-ct": "playwright test -c playwright-ct.config.js",
+	  "test": "playwright test"
 	},
 	"devDependencies": {
-		"@fontsource/fira-mono": "^4.5.10",
-		"@neoconfetti/svelte": "^1.0.0",
-		"@playwright/test": "^1.28.1",
-		"@sveltejs/adapter-auto": "^2.0.0",
-		"@sveltejs/kit": "^1.20.4",
-		"svelte": "^4.0.5",
-		"vite": "^4.4.2"
+	  "@playwright/experimental-ct-svelte": "^1.37.1",
+	  "@playwright/test": "^1.36.2",
+	  "@rollup/plugin-commonjs": "^24.0.0",
+	  "@rollup/plugin-json": "^6.0.0",
+	  "@rollup/plugin-node-resolve": "^15.0.0",
+	  "@rollup/plugin-terser": "^0.4.0",
+	  "rollup": "^3.26.3",
+	  "rollup-plugin-css-only": "^4.3.0",
+	  "rollup-plugin-livereload": "^2.0.0",
+	  "rollup-plugin-svelte": "^7.1.2",
+	  "svelte": "^3.59.2",
+	  "svelte-preprocess": "^5.0.4"
 	},
-	"type": "module"
-}
+	"dependencies": {
+	  "feather-icons": "^4.29.0",
+	  "fs": "^0.0.1-security",
+	  "path": "^0.12.7",
+	  "pdfjs-dist": "^3.7.107",
+	  "pdfmake": "^0.2.7",
+	  "sirv-cli": "^2.0.0",
+	  "svelte-feather-icons": "^4.0.1"
+	}
+  }
+  
